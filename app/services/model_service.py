@@ -2,12 +2,16 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
+import os
 
 # CLASSES de acuerdo con la descripción
 CLASSES = ['Mild', 'Moderate', 'No_DR', 'Proliferate_DR', 'Severe']
 
-# Cargar el modelo preentrenado
-model = tf.keras.models.load_model('densenet121.h5')
+# Obtener la ruta del directorio actual donde se ejecuta el script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Ruta al modelo desde el directorio base
+model = tf.keras.models.load_model(os.path.join(BASE_DIR, 'models', 'densenet121.h5'))
 
 def predict_image(image_bytes):
     """
