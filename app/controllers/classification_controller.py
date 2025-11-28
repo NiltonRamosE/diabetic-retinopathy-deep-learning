@@ -14,6 +14,5 @@ def classify_image():
     # Si quieres también las probabilidades de todas las clases, pasa return_all_probs=True
     result = predict_image(image_bytes, return_all_probs=False)
 
-    # Ejemplo de respuesta:
-    # { "label": "Moderate", "confidence": 87.65 }
-    return jsonify(result)
+    response = {'prediction': result}
+    return jsonify(response)
