@@ -8,7 +8,7 @@ import os
 CLASSES = ['Mild', 'Moderate', 'No_DR', 'Proliferate_DR', 'Severe']
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, 'models', 'densenet121.h5')
+MODEL_PATH = os.path.join(BASE_DIR, 'models', 'EfficientNet_TF_model.h5')
 
 # Cargar el modelo (fuera de la función para cargar solo una vez)
 model = tf.keras.models.load_model(MODEL_PATH, compile=False)
